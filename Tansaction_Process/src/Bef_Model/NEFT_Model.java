@@ -1,4 +1,4 @@
-package Bef_Model;
+                                                                                                                                         package Bef_Model;
 
 public class NEFT_Model 
 {
@@ -10,9 +10,11 @@ public class NEFT_Model
 	String trans_am;
 	String remark;
 	String trans_ID;
+	String balance;
 	
 	
-	
+
+
 
 
 	public NEFT_Model() {
@@ -22,7 +24,7 @@ public class NEFT_Model
 
 
 	public NEFT_Model(String source_acc, String bef_id, String ifsc, String bef_AccNo, String bef_name, String trans_am,
-			String remark,String trans_ID) {
+			String remark,String trans_ID,String balance) {
 		super();
 		this.source_acc = source_acc;
 		this.bef_id = bef_id;
@@ -32,6 +34,7 @@ public class NEFT_Model
 		this.trans_am = trans_am;
 		this.remark = remark;
 		this.trans_ID = trans_ID;
+		this.balance = balance;
 	}
 
 
@@ -128,5 +131,15 @@ public class NEFT_Model
 		this.trans_ID = trans_ID;
 	}
 
-	
+
+	public String getBalance() {
+		return balance;
+	}
+
+
+
+	public void setBalance(String balance) {
+		this.balance = balance;
+	}
+
 }

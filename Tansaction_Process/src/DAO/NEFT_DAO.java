@@ -19,9 +19,10 @@ public class NEFT_DAO
 			String trans_am=b.getTrans_am();
 			String remark=b.getRemark();
 			String trans_ID=b.getTrans_ID();
+			String balance=b.getBalance();
 		    int result=0;
-		    String sql="insert into PRIYA1996.NEFT values(?,?,?,?,?,?,?)";
-    	
+		    String sql="insert into PRIYA1996.NEFT values(?,?,?,?,?,?,?,?,?)";
+	
     		try
     		{
     		DriverManager.registerDriver(new oracle.jdbc.driver.OracleDriver());
@@ -35,6 +36,7 @@ public class NEFT_DAO
     	    pre.setString(6, trans_am);
     	    pre.setString(7, remark);
     	    pre.setString(8, trans_ID);
+    	    pre.setString(9, balance);
     	    result=pre.executeUpdate();
     		}
     		catch(Exception e)

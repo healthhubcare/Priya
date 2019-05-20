@@ -50,11 +50,14 @@ public class NEFT_Ser extends HttpServlet {
 		String bef_name=request.getParameter("bef_Name");
 		String trans_am=request.getParameter("trans_amount");
 		String remark=request.getParameter("Remark");
+		String ava_am = null;
+		int bal=(Integer.parseInt(trans_am))-(Integer.parseInt(ava_am));
+		String balance=Integer.toString(bal);
 		Random r=new Random();
 		int r1=r.nextInt();
 		String trans_ID=Integer.toString(r1);
 		NEFT_DAO n=new NEFT_DAO();
-		NEFT_Model nm=new NEFT_Model(source_acc,bef_id,ifsc,bef_AccNo,bef_name,trans_am,remark,trans_ID);
+		NEFT_Model nm=new NEFT_Model(source_acc,bef_id,ifsc,bef_AccNo,bef_name,trans_am,remark,trans_ID,balance);
 		int result=n.insert(nm);
 		if(result>0)
 		{
